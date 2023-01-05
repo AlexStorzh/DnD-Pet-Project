@@ -1,0 +1,28 @@
+$base-color: #3f4e4f;
+
+.nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $base-color;
+    border-bottom: 2px solid darken($color: #a27b5c, $amount: 20);
+    a {
+        background-color: $base-color;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #dcd7c9;
+        text-decoration: none;
+        height: 60px;
+        width: 160px;
+        transition: 0.3s;
+        &:hover {
+            background-color: lighten($color: $base-color, $amount: 15);
+            font-size: larger;
+        }
+        &:active {
+            background-color: darken($color: $base-color, $amount: 15);
+            transform: scale(110%);
+        }
+    }
+}

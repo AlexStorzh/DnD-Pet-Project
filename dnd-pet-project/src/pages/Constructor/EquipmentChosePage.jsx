@@ -1,11 +1,7 @@
-import React from 'react';
+import React from "react";
 
 const EquipmentChosePage = () => {
-    return (
-        <div>
-            EquipmentChosePage
-        </div>
-    );
+  return <div>EquipmentChosePage</div>;
 };
 
 export default EquipmentChosePage;

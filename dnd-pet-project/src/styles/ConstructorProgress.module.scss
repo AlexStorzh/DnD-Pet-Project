@@ -1,0 +1,26 @@
+$text-color: #dcd7c9;
+$background-color: #a27b5c;
+
+.nav {
+    background: rgb(162, 123, 92);
+    background: radial-gradient(
+        circle,
+        rgba(162, 123, 92, 0.9800069686077556) 53%,
+        rgba(2, 0, 36, 0) 100%,
+        rgba(2, 0, 36, 0) 100%
+    );
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    a {
+        padding: 10px;
+        color: $text-color;
+        text-decoration: none;
+        width: 100%;
+        text-align: center;
+        &:hover {
+            transition: 0.25s;
+            background-color: darken($color: $background-color, $amount: 7.5);
+        }
+    }
+}

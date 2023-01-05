@@ -1,11 +1,7 @@
-import React from 'react';
+import React from "react";
 
 const ClassChosePage = () => {
-    return (
-        <div>
-            ClassChosePage
-        </div>
-    );
+  return <div>ClassChosePage</div>;
 };
 
 export default ClassChosePage;
