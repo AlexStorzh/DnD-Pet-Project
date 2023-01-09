@@ -30,8 +30,16 @@
         }
         .dashboard_fields {
             display: flex;
-            flex-direction: column;
+            gap: 30px;
             font-family: Roboto Condensed, Roboto, Helvetica, sans-serif;
+            .character_name {
+                display: flex;
+                flex-direction: column;
+            }
+            .character_history {
+                display: flex;
+                flex-direction: column;
+            }
             span {
                 font-family: Roboto Condensed, Roboto, Helvetica, sans-serif;
                 font-size: 16px;
@@ -40,6 +48,15 @@
                 margin-bottom: 10px;
             }
             input {
+                background: none rgb(255, 255, 255);
+                border: 1px solid rgb(221, 221, 221);
+                border-radius: 4px;
+                font-size: 16px;
+                box-shadow: rgb(0 0 0 / 10%) 0px 1px 1px inset;
+                color: rgb(0, 0, 0);
+                padding: 10px;
+            }
+            select {
                 background: none rgb(255, 255, 255);
                 border: 1px solid rgb(221, 221, 221);
                 border-radius: 4px;

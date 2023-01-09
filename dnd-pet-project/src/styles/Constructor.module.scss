@@ -1,7 +1,54 @@
 .constructor {
+    font-family: Roboto Condensed, Roboto, Helvetica, sans-serif;
     display: flex;
     flex-direction: column;
     width: 80%;
     align-self: center;
     align-items: center;
+    .nav_buttons {
+        display: flex;
+        position: fixed;
+        top: 300px;
+        div {
+            box-sizing: border-box;
+            width: 40px;
+            height: 40px;
+            border: 2px solid #a27b5c;
+            background-color: #dcd7c9;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: 0.3s;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            img {
+                width: 20px;
+                height: 20px;
+                position: fixed;
+            }
+            span {
+                visibility: hidden;
+            }
+            &:hover {
+                width: 80px;
+                span {
+                    visibility: visible;
+                }
+                img {
+                    visibility: hidden;
+                }
+            }
+        }
+        .button_next {
+            position: fixed;
+            left: 50%;
+            margin-left: 415px;
+        }
+        .button_previous {
+            position: fixed;
+            right: 50%;
+            margin-right: 415px;
+        }
+    }
 }
