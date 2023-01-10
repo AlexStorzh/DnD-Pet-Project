@@ -1,0 +1,49 @@
+.race_chose_body {
+    font-family: Roboto Condensed, Roboto, Helvetica, sans-serif;
+    width: 65%;
+    height: 100%;
+    background: url(../images/background_texture.png);
+    box-shadow: 0 0 8px 3px black inset;
+    .race_chose_primary {
+        display: flex-start;
+        justify-content: center;
+        margin: 10px 0px 10px 10px;
+        span {
+            font-size: 28px;
+            font-weight: bolder;
+        }
+    }
+    .race_chose_column {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin: 10px;
+
+        div {
+            border-radius: 10px;
+            font-weight: bolder;
+            display: flex;
+            height: 50px;
+            font-size: 18px;
+            align-items: center;
+            border: 1px solid black;
+            cursor: pointer;
+            transition: 0.3s;
+            &:hover {
+                transform: scale(100.5%);
+
+                background-color: darken($color: #dcd7c9, $amount: 10);
+            }
+            img {
+                width: 40px;
+                height: 40px;
+                margin: 0px 15px 0px 10px;
+            }
+            .chevron {
+                margin-left: auto;
+                margin-right: 5px;
+                color: red;
+            }
+        }
+    }
+}

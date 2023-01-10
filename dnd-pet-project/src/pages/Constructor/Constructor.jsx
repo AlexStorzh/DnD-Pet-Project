@@ -17,7 +17,11 @@ const Constructor = () => {
   };
   return (
     <div className={style.constructor}>
-      <ConstructorProgress arr={constructorPagesData} className={style.nav} />
+      <ConstructorProgress
+        setPage={setPage}
+        arr={constructorPagesData}
+        className={style.nav}
+      />
       <div className={style.nav_buttons}>
         {page > 0 && (
           <Link to={data[page - 1].link}>
