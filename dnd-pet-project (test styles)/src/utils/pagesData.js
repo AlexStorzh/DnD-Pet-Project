@@ -22,7 +22,6 @@ const constructorPagesData = [
         link: '/constructor/dashboard',
         title: 'Dashboard',
         index: 0,
-
     },
     {
         link: '/constructor/race',

@@ -3,8 +3,9 @@ import style from "../../styles/ConstructorDashboard.module.scss";
 import { useState, useEffect } from "react";
 import { getApiResource } from "../../api/getApi";
 import { DND_API, DND_BACKGROUNDS } from "../../utils/apiConstants";
+import { motion } from "framer-motion";
 
-const ConstructorDashboard = () => {
+const ConstructorDashboard = ({ isVisible }) => {
   const [backgroundsData, setBackgroundsData] = useState("");
   const [selected, setSelected] = useState("");
   const [characterBackground, setCharacterBackground] = useState();
