@@ -1,0 +1,29 @@
+$text-color: whitesmoke;
+$font-text: "Raleway", sans-serif;
+$bgc: #1b1716;
+
+.slider {
+    min-height: 100%;
+    min-width: 50%;
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    box-shadow: 0px 0px 6px 10px rgba(0, 0, 0, 0.51);
+}
+.top-appearance {
+    display: flex;
+    img {
+        cursor: pointer;
+        width: 80px;
+        height: 80px;
+    }
+    .race-name {
+        cursor: default;
+        margin-top: 15px;
+        font-size: 40px;
+        letter-spacing: 3px;
+        font-family: DragonHunter;
+        color: $text-color;
+        text-transform: uppercase;
+    }
+}

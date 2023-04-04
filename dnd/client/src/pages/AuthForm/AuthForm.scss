@@ -1,0 +1,12 @@
+.body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    height: 70vh;
+    width: 80vh;
+    display: flex;
+    justify-content: space-around;
+    border-radius: 20px;
+    background: linear-gradient(0deg, rgba(23, 22, 27, 1) 48%, rgba(63, 46, 36, 1) 100%);
+}
