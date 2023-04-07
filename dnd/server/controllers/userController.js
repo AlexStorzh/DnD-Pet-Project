@@ -18,8 +18,6 @@ class userController {
             next(err);
         }
     }
-
-
     async login(req, res, next) {
         try {
             const { email, password } = req.body
@@ -31,10 +29,6 @@ class userController {
         }
 
     }
-
-
-
-
     async logout(req, res, next) {
         try {
             const { refreshToken } = req.cookies;

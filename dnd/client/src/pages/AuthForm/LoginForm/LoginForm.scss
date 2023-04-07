@@ -1,7 +1,9 @@
 $text-color: whitesmoke;
-$font-text: "Raleway", sans-serif;
+$font-header: "Forum";
+$font-text: "Lato", sans-serif;
 $bgc: #1b1716;
 
+@import url("https://fonts.googleapis.com/css2?family=Forum&family=Lato&display=swap");
 .login-body {
     cursor: default;
     display: flex;
@@ -11,22 +13,17 @@ $bgc: #1b1716;
     height: 100%;
     width: 100%;
     .login-form {
-        box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.51);
         display: flex;
         flex-direction: column;
         max-width: 230px;
         padding: 10px;
         border-radius: 5px;
-        border: 5px solid #987e28;
-        // CHECK TO MAKE GRADIENT
-        // border-image: linear-gradient(-3deg, #3e2d24, #d4af37) 1;
         .login-text {
-            
             &-header {
                 text-shadow: 2px -2px 2px #000000;
-                font-family: "Playfair Display", serif;
+                font-family: $font-header;
                 color: $text-color;
-                font-size: medium;
+                font-size: 36px;
                 text-align: center;
                 text-transform: uppercase;
                 letter-spacing: 2px;
@@ -34,8 +31,7 @@ $bgc: #1b1716;
             }
             &-body {
                 font-family: $font-text;
-                font-weight: 600;
-                font-size: small;
+                font-size: 12px;
                 color: rgb(184, 184, 184);
                 padding: 10px;
                 line-height: 12px;
@@ -53,7 +49,7 @@ $bgc: #1b1716;
                 border-bottom: 0;
                 padding: 5px;
                 margin: 5px;
-                border-radius: 5px;
+                // border-radius: 5px;
                 outline: none;
                 color: $text-color;
                 background-color: $bgc;
@@ -62,7 +58,7 @@ $bgc: #1b1716;
                 width: 90%;
                 transition: 0.2s ease-in-out;
                 &:hover {
-                    transition: 0.2s ease-in-out ;
+                    transition: 0.2s ease-in-out;
                     background-color: #282221;
                 }
                 &:focus {
@@ -91,25 +87,24 @@ $bgc: #1b1716;
                 font-weight: 600;
                 width: 100%;
                 margin-top: 5px;
-                font-family: $font-text;
-                color:$text-color;
+                font-family: $font-header;
+                color: $text-color;
                 background-color: $bgc;
                 border-radius: 2px;
-                border: 2px solid #987e28;
                 padding: 10px;
                 transition: 0.3s;
                 span {
-                    &::after { 
-                        content: '\00bb';
+                    &::after {
+                        content: "\00bb";
                         opacity: 0;
                     }
                 }
                 &:hover {
-                     background-color: $text-color;
-                     color: #000000;
-                     border: 2px solid $text-color;
+                    background-color: $text-color;
+                    color: #000000;
+                    border: 2px solid $text-color;
                 }
-                &:hover span::after{
+                &:hover span::after {
                     opacity: 1;
                     transition: 0.2;
                 }
@@ -119,11 +114,11 @@ $bgc: #1b1716;
             }
         }
     }
-    .login-slider {
-        margin-top: 10px;
-        width: 200px;
-        height: 100px;
-        background-color: red;
-        text-align: center;
-    }
+    // .login-slider {
+    //     margin-top: 10px;
+    //     width: 200px;
+    //     height: 100px;
+    //     background-color: red;
+    //     text-align: center;
+    // }
 }

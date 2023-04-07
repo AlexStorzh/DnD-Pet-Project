@@ -37,9 +37,6 @@ class UserService {
         user.isActivated = true;
         await user.save()
     }
-
-
-
     async login(email, password) {
         const user = await userModel.findOne({ email })
         if (!user) {
@@ -58,12 +55,10 @@ class UserService {
             user: userDto
         }
     }
-
     async logout(refreshToken) {
         const token = await tokenService.removeToken(refreshToken)
         return token;
     }
-
     async refresh(refreshToken) {
         if (!refreshToken) {
             throw ApiError.UnauthorizedError()

@@ -10,13 +10,17 @@ require('dotenv').config()
 
 
 const PORT = process.env.SERVER_PORT || 4001
+const CLIENT_URL = process.env.CLIENT_URL
 const MONGOOSE_CONNECT = process.env.MONGOOSE_CONNECT
 const app = express() // 1.1 Запускаем функцию express
 
 
 app.use(express.json())// Возможность серверу читать json данные
 app.use(cookieParser())
-app.use(cors())
+app.use(cors({
+    credentials: true,
+    origin: CLIENT_URL
+}))
 app.use('/auth', authRouter) //3.1 Прослуштваем пути на сервере
 app.use(errorMiddleware)
 
@@ -27,12 +31,10 @@ app.use(errorMiddleware)
 const start = async () => {
     try {
         await mongoose.connect(MONGOOSE_CONNECT).then(() => console.log('DB is OK')) //2.1 Коннектимся к базе
-
         app.listen(PORT, (err) => {
             if (err) {
                 return console.log(err);
             }
-
             console.log(`Server is OK on ${PORT}`);
         })
     } catch (error) {

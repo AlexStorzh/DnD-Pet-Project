@@ -1,7 +1,7 @@
 import React from "react";
 import "./AuthForm.scss";
-import LoginForm from "../../components/LoginForm/LoginForm";
-import PictureSlider from "../../components/PictureSlider/PictureSlider";
+import LoginForm from "./LoginForm/LoginForm";
+import PictureSlider from "./PictureSlider/PictureSlider";
 
 const AuthForm = () => {
   return (

@@ -1,15 +1,17 @@
 import React, { useState } from "react";
 import "./LoginForm.scss";
-
+import { useDispatch } from "react-redux";
+import { loginAuth, registrationAuth } from "../../../store/Slices/authSlice";
 const LoginForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const dispatch = useDispatch();
 
   return (
     <div className="login-body">
       <div className="login-form">
         <div className="login-text">
-          <div className="login-text-header">what about</div>
+          <div className="login-text-header">about</div>
           <p className="login-text-body">
             DnD Creator is a website that makes it easy to create and customize
             characters for Dungeons and Dragons, with a wealth of tools and
@@ -35,15 +37,21 @@ const LoginForm = () => {
         </div>
 
         <div className="buttons">
-          <button className="button">
+          <button
+            onClick={() => dispatch(loginAuth({ email, password }))}
+            className="button"
+          >
             <span>Login In </span>
           </button>
-          <button className="button">
+          <button
+            onClick={() => dispatch(registrationAuth({ email, password }))}
+            className="button"
+          >
             <span>Sign Up </span>
           </button>
         </div>
       </div>
-      <div className="login-slider">slider</div>
+      {/* <div className="login-slider">slider</div> */}
     </div>
   );
 };

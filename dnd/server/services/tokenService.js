@@ -12,7 +12,6 @@ class TokenService {
             refreshToken
         }
     }
-
     validateAccessToken(token) {
         try {
             const userData = jwt.verify(token, JWT_ACCESS_SECRET)
@@ -21,7 +20,6 @@ class TokenService {
             return null
         }
     }
-
     validateRefreshToken(token) {
         try {
             const userData = jwt.verify(token, JWT_REFRESH_SECRET)
@@ -32,6 +30,7 @@ class TokenService {
         }
     }
 
+
     async saveToken(userId, refreshToken) {
         const tokenData = await tokenModel.findOne({ user: userId })
         if (tokenData) {
@@ -41,12 +40,10 @@ class TokenService {
         const token = await tokenModel.create({ user: userId, refreshToken })
         return token;
     }
-
     async removeToken(refreshToken) {
         const tokenData = await tokenModel.deleteOne({ refreshToken })
         return tokenData
     }
-
     async FindOneToken(refreshToken) {
         const tokenData = await tokenModel.findOne({ refreshToken })
         return tokenData
