@@ -12,21 +12,24 @@ export const loginAuth = createAsyncThunk(
             dispatch(setAuth(true));
             dispatch(setUser(response.data.user));
         } catch (error) {
-            console.log(error.response?.data?.message);
+
+            console.log(rejectWithValue(error.response?.data));
+            return rejectWithValue(error.response?.data)
         }
     }
 )
 export const registrationAuth = createAsyncThunk(
     'auth/registrationAuth',
-    async function ({ email, password }, { rejectWithValue, dispatch },) {
+    async function ({ email, username, password }, { rejectWithValue, dispatch },) {
         try {
-            const response = await AuthService.registration(email, password)
+            const response = await AuthService.registration(email, username, password)
             console.log(response);
             localStorage.setItem('token', response.data.accessToken)
             dispatch(setAuth(true));
             dispatch(setUser(response.data.user));
         } catch (error) {
-            console.log(error.response?.data?.message);
+            console.log(error.response?.data?.message || error.response?.data?.errors);
+            return rejectWithValue(error.response?.data?.errors)
         }
     }
 )
@@ -67,6 +70,7 @@ const authSlice = createSlice({
         user: {},
         isAuth: false,
         isLoading: false,
+        error: null,
     },
     reducers: {
         setAuth(state, action) {
@@ -80,6 +84,12 @@ const authSlice = createSlice({
         }
     },
     extraReducers: {
+        [loginAuth.rejected]: (state, action) => {
+            state.error = action.payload
+        },
+        [registrationAuth.rejected]: (state, action) => {
+            state.error = action.payload
+        }
 
     }
 })

@@ -1,0 +1,77 @@
+$text-color: whitesmoke;
+$font-header: "Forum";
+$font-text: "Lato", sans-serif;
+$bgc: #1b1716;
+
+.registration-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    input {
+        cursor: pointer;
+        height: 35px;
+        font-size: 15px;
+        border: 0;
+        border-bottom: 0;
+        padding: 5px;
+        margin: 5px;
+        outline: none;
+        color: $text-color;
+        background-color: $bgc;
+        text-align: center;
+        font-family: $font-text;
+        width: 90%;
+        transition: 1s all;
+
+        &:focus::placeholder {
+            color: transparent;
+            transition: 0.2s ease-out;
+            transform: translateY(-20px);
+        }
+        &::placeholder {
+            color: $text-color;
+        }
+    }
+    .error-input {
+        width: 100%;
+        background-image: linear-gradient(to right, rgb(88, 0, 0) 5%, rgba(0, 0, 0, 0) 0%);
+    }
+}
+.button {
+    cursor: pointer;
+    font-weight: 600;
+    width: 100%;
+    margin-top: 5px;
+    font-family: $font-header;
+    color: $text-color;
+    background-color: $bgc;
+    border-radius: 2px;
+    padding: 10px;
+    transition: 0.3s;
+    span {
+        &::after {
+            content: "\00bb";
+            opacity: 0;
+        }
+    }
+    &:hover {
+        background-color: $text-color;
+        color: #000000;
+        border: 2px solid $text-color;
+    }
+    &:hover span::after {
+        opacity: 1;
+        transition: 0.2;
+    }
+    &:active {
+        transform: scaleX(0.95);
+    }
+}
+.registration {
+    color: white;
+    margin-top: 20px;
+}
+.error {
+    color: red;
+    transition: 1s;
+}

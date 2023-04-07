@@ -40,11 +40,11 @@ class UserService {
     async login(email, password) {
         const user = await userModel.findOne({ email })
         if (!user) {
-            throw ApiError.BadRequest("No user with this email")
+            throw ApiError.BadRequest("No user with this email.",)
         }
         const isPassEquals = await bcrypt.compare(password, user.password);
         if (!isPassEquals) {
-            throw ApiError.BadRequest("Password not correct")
+            throw ApiError.BadRequest("Password is not correct.",)
         }
         const userDto = new UserDto(user)
         const tokens = tokenService.generateTokens({ ...userDto })
