@@ -68,10 +68,16 @@ $bgc: #1b1716;
     }
 }
 .registration {
-    color: white;
+    color: $text-color;
     margin-top: 20px;
 }
 .error {
-    color: red;
-    transition: 1s;
+    width: 100%;
+    text-align: center;
+    background-color: rgb(88, 0, 0);
+    border-radius: 2px;
+    &-text {
+        padding: 10px;
+        font-family: $font-text;
+    }
 }

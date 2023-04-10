@@ -28,8 +28,8 @@ export const registrationAuth = createAsyncThunk(
             dispatch(setAuth(true));
             dispatch(setUser(response.data.user));
         } catch (error) {
-            console.log(error.response?.data?.message || error.response?.data?.errors);
-            return rejectWithValue(error.response?.data?.errors)
+            console.log(error.response?.data);
+            return rejectWithValue(error.response?.data)
         }
     }
 )

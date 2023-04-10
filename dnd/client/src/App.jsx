@@ -30,8 +30,7 @@ function App() {
       <div className="App">
         <Routes>
           <Route path="/" element={<LoginPage />} />
-          <Route path="/1" element={<RegistrationPage />} />
-          <Route path="/registration" element={<LoginPage />} />
+          <Route path="/registration" element={<RegistrationPage />} />
         </Routes>
       </div>
     );
@@ -45,6 +44,11 @@ function App() {
           You are logged in with {store.user.email} with this username{" "}
           {store.user.username}
         </h1>
+        <h2 style={{ color: "white" }}>
+          {store.user.isActivated
+            ? "Account activated"
+            : "Account not activated"}
+        </h2>
         <button onClick={() => dispatch(logoutAuth())}>LOGOUT </button>
       </div>
     </div>

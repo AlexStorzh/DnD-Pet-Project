@@ -11,7 +11,7 @@ const PictureSlider = () => {
         {/* Receive names from DB !!! CHANGE ALUKARD FOR {characterName} */}
         <p className="race-name">Dragonborn</p>
       </div>
-      <div className="bot-appearance">11</div>
+      <div className="bot-appearance"></div>
     </div>
   );
 };
