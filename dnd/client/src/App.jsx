@@ -1,14 +1,15 @@
 import "./App.css";
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { checkAuth, logoutAuth } from "./store/Slices/authSlice";
+import { checkAuth } from "./store/Slices/authSlice";
 
-import LoginPage from "./pages/LoginPage/LoginPage";
-import RegistrationPage from "./pages/RegistrationPage/RegistrationPage";
-
+import LoginPage from "./pages/AuthForm/LoginPage/LoginPage";
+import RegistrationPage from "./pages/AuthForm/RegistrationPage/RegistrationPage";
+import CharacterCreatorPage from "./pages/CharacterCreatorPage/CharacterCreatorPage";
 function App() {
   const store = useSelector((state) => state.auth);
+
   const dispatch = useDispatch();
   useEffect(() => {
     if (localStorage.getItem("token")) {
@@ -39,18 +40,9 @@ function App() {
   //ЗАГУЛШКА ЛОГИНА
   return (
     <div className="App">
-      <div style={{ display: "flex", flexDirection: "column" }}>
-        <h1 style={{ color: "white" }}>
-          You are logged in with {store.user.email} with this username{" "}
-          {store.user.username}
-        </h1>
-        <h2 style={{ color: "white" }}>
-          {store.user.isActivated
-            ? "Account activated"
-            : "Account not activated"}
-        </h2>
-        <button onClick={() => dispatch(logoutAuth())}>LOGOUT </button>
-      </div>
+      <Routes>
+        <Route path="/home" element={<CharacterCreatorPage />} />/
+      </Routes>
     </div>
   );
 }

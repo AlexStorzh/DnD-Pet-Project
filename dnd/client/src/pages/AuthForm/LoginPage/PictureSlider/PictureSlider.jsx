@@ -1,6 +1,6 @@
 import React from "react";
-import dragon from "../../../images/dragon.png";
-import icon from "../../../images/L5R mons.gif";
+import dragon from "../../../../images/dragon.png";
+import icon from "../../../../images/L5R mons.gif";
 import "./PictureSlider.scss";
 const PictureSlider = () => {
   return (

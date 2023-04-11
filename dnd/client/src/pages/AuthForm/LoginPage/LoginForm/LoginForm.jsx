@@ -1,12 +1,14 @@
-import React, { useState } from "react";
-import "./LoginForm.scss";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { loginAuth } from "../../../store/Slices/authSlice";
-
 import { motion, AnimatePresence } from "framer-motion";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
+
+import "./LoginForm.scss";
+import { loginAuth } from "../../../../store/Slices/authSlice";
 
 const LoginForm = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const loginServerError = useSelector((state) => state.auth.error);
 
@@ -18,6 +20,7 @@ const LoginForm = () => {
 
   const onSubmit = async (email, password) => {
     await dispatch(loginAuth(email, password));
+    await navigate("/home");
   };
   return (
     <AnimatePresence>

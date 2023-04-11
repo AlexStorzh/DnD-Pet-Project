@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { registrationAuth } from "../../../store/Slices/authSlice.js";
+import { registrationAuth } from "../../../../store/Slices/authSlice.js";
 import { useForm } from "react-hook-form";
 import { motion, AnimatePresence } from "framer-motion";
 import "./RegistrationForm.scss";
